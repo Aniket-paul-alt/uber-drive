@@ -1,16 +1,24 @@
 import React from 'react'
 
-const ConfirmRide = (props) => {
+const WaitForDriver = (props) => {
   return (
     <div>
         <h5 onClick={() => {
-          props.setConfirmRidePanel(false)
-        }} className='p-3 text-3xl absolute top-4 right-4'>
+          props.setWaitingForDriver(false)
+        }} className='p-3 text-3xl absolute top-2 right-[42%]'>
           <i className="ri-arrow-down-wide-line"></i>
         </h5>
-        <h3 className='text-2xl font-semibold mb-5'>Confirm Your Ride</h3>
+        
+        <div className='flex items-center justify-between'>
+        <img className='h-16' src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_956,h_638/v1682350114/assets/c2/296eac-574a-4a81-a787-8a0387970755/original/UberBlackXL.png" alt="" />
+        <div className='text-right'>
+            <h2 className='text-lg font-medium'>Aniket</h2>
+            <h4 className='text-xl font-semibold -mt-1 -mb-1'>WB 04 AP 1234</h4>
+            <p className='text-sm text-gray-600'>Maruti Alto</p>
+        </div>
+        </div>
+
         <div className='flex gap-2 justify-between flex-col items-center'>
-        <img className='h-20' src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_956,h_638/v1682350114/assets/c2/296eac-574a-4a81-a787-8a0387970755/original/UberBlackXL.png" alt="" />
         <div className='w-full mt-5'>
             <div className='flex items-center gap-5 p-3 border-b-2'>
                 <i className='text-lg ri-map-pin-user-fill'></i>
@@ -34,13 +42,10 @@ const ConfirmRide = (props) => {
                 </div>
             </div>
         </div>
-        <button onClick={()=>{
-          props.setVehicleFound(true)
-          props.setConfirmRidePanel(false)
-        }} className='w-full mt-5 bg-green-600 text-white font-semibold p-2 rounded-lg'>Confirm</button>
+        
         </div>
     </div>
   )
 }
 
-export default ConfirmRide
+export default WaitForDriver
