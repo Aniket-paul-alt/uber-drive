@@ -1,14 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const RidePopUp = (props) => {
+const FinishRide = (props) => {
+    
     return (
-        <div>
+        <div className='h-screen'>
             <h5 onClick={() => {
-                props.setRidePopUpPanel(false)
+                props.setFinishRidePanel(false)
             }} className='p-3 text-3xl absolute top-4 right-4'>
                 <i className="ri-arrow-down-wide-line"></i>
             </h5>
-            <h3 className='text-2xl font-semibold mb-5'>New Ride Available!</h3>
+            <h3 className='text-2xl font-semibold mb-5'>Finish this Ride!</h3>
             <div className='flex items-center justify-between mt-4 p-3 bg-gray-100 rounded-lg'>
                 <div className='flex items-center gap-3'>
                     <img className='h-10 w-10 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgqUyiQj4k-uPKTPtuhemHKExV8iIMNMs29OYAbESdZL37AVn0M5VuKy1qjdrIwbco2Qg&usqp=CAU" alt="" />
@@ -40,16 +42,10 @@ const RidePopUp = (props) => {
                         </div>
                     </div>
                 </div>
-                <button onClick={() => {
-                    props.setConfirmRidePopUpPanel(true)
-                    props.setRidePopUpPanel(false)
-                }} className='w-full mt-5 bg-green-600 text-white font-semibold p-2 rounded-lg'>Accept</button>
-                <button onClick={() => {
-                    props.setRidePopUpPanel(false)
-                }} className='w-full mt-1 bg-gray-300 text-gray-700 font-semibold p-2 rounded-lg'>Ignore</button>
+                <Link to='/captain-home' className='w-full flex justify-center mt-5 bg-green-600 text-white font-semibold p-2 rounded-lg'>Finish Ride</Link>
             </div>
         </div>
     )
 }
 
-export default RidePopUp
+export default FinishRide
